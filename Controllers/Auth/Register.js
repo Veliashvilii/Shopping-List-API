@@ -4,7 +4,7 @@ const Jwt = require('jsonwebtoken');
 
 const register = async(req, res) => {
   try {
-    const {full_name, email, password} = req.body
+    const {fullName, email, password} = req.body
     const user = await Auth.findOne({email})
 
     if (user) {
@@ -16,7 +16,7 @@ const register = async(req, res) => {
     }
 
     const passwordHash = await Bcrypt.hash(password, 12)
-    const newUser = await Auth.create({full_name, email, password: passwordHash})
+    const newUser = await Auth.create({fullName, email, password: passwordHash})
 
     const userToken = Jwt.sign({id: newUser.id}, process.env.SECRET_TOKEN, {expiresIn: '1h'});
     res.status(201).json({
