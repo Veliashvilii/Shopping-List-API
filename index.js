@@ -21,9 +21,11 @@ app.use(express.urlencoded({limit: "30mb", extended: true}));
 // Which endpoints are used in the API?
 app.use('/', Login);
 app.use('/', Register);
+app.use('/', ForgotPassword);
 
 // Database connection and server has running on PORT
 Database()
+const server = require('./App/App.js')
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);

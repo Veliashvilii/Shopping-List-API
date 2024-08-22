@@ -1,4 +1,4 @@
-const Auth = require('../../Models/Auth.js');
+const Auth = require('../../Models/Auth/Auth.js');
 
 const ForgotPassword = async(req, res) => {
   try {
