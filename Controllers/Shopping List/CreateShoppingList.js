@@ -5,10 +5,7 @@ const createShoppingList = async(req, res) => {
   try {
     const {items, note} = req.body;
     const userId = req.userId;
-    //const roomId = generateRoomId()
     const roomId = `room_${uuidv4()}`;
-
-    console.log('Generated roomId:', roomId); // Debugging
 
     const room = await ShoppingList.create({
       roomId: roomId,
