@@ -11,6 +11,9 @@ const Login = require('../Routers/Auth/Login.js');
 const Register = require('../Routers/Auth/Register.js');
 const ForgotPassword = require('../Routers/Auth/ForgotPassword.js');
 
+// Shopping List Routers
+const CreateShoppingList = require('../Routers/Shopping List/CreateShoppingList.js');
+
 dotenv.config();
 
 const app = express();
@@ -26,6 +29,7 @@ app.use(express.urlencoded({limit: "30mb", extended: true}));
 app.use('/', Login);
 app.use('/', Register);
 app.use('/', ForgotPassword);
+app.use('/', CreateShoppingList);
 
 // Database connection and server has running on PORT
 socketHandler(io);

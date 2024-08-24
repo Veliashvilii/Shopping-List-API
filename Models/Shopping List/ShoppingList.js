@@ -1,22 +1,16 @@
 const mongoose = require('mongoose');
 
-const ShoppingListSchema = new mongoose.Schema({
-  roomID: {
+const shoppingListSchema = new mongoose.Schema({
+  roomId: {
     type: String,
-    required: true,
-    unique: true
+    unique: true,
+    required: true
   },
-
   items: [String],
-  
-  message: {
-    type: String,
-    required: false,
-    unique: false
-  },
-
+  message: String,
   participants: [String]
 });
 
-const ShoppingList = mongoose.model('ShoppingList', ShoppingListSchema);
+const ShoppingList = mongoose.model('ShoppingList', shoppingListSchema);
+
 module.exports = ShoppingList;

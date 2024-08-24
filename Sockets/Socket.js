@@ -6,7 +6,7 @@ const updateListHandler = require('./Events/UpdateList.js');
 
 const socketHandler = (io) => {
   io.on('connection', (socket) => {
-    console.log('Yeni bir kullanıcı bağlandı:', socket.id);
+    //console.log('Yeni bir kullanıcı bağlandı:', socket.id);
 
     // Bağlantı olaylarını yönet
     connectionHandler(socket, io);
