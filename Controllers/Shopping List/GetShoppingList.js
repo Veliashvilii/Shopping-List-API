@@ -1,14 +1,14 @@
 const ShoppingList = require('../../Models/Shopping List/ShoppingList.js');
 
-const GetMyShoppingLists = async(req, res) => {
+const GetShoppingList = async(req, res) => {
   try {
-    const userId = req.userId;
-    const shoppingLists = await ShoppingList.find({participants: userId}).select('roomId items message participants -_id');
-
-    if (shoppingLists) {
+    const roomId = req.query.roomId;
+    const shoppingList = await ShoppingList.find({roomId: roomId}).select('roomId items message participants -_id');
+  
+    if (shoppingList) {
       res.status(200).json({
         status: "Success",
-        shoppingLists
+        shoppingList
       });
     } else {
       return res.status(404).json({
@@ -24,4 +24,4 @@ const GetMyShoppingLists = async(req, res) => {
   }
 };
 
-module.exports = GetMyShoppingLists;
+module.exports = GetShoppingList;
