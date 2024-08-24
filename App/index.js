@@ -14,6 +14,7 @@ const ForgotPassword = require('../Routers/Auth/ForgotPassword.js');
 // Shopping List Routers
 const CreateShoppingList = require('../Routers/Shopping List/CreateShoppingList.js');
 const GetShoppingList = require('../Routers/Shopping List/GetShoppingList.js');
+const DeleteShoppingList = require('../Routers/Shopping List/DeleteShoppingList.js');
 
 // Users Routers
 const GetMyShoppingLists = require('../Routers/User/GetMyShoppingLists.js');
@@ -36,6 +37,7 @@ app.use('/', ForgotPassword);
 app.use('/', CreateShoppingList);
 app.use('/', GetMyShoppingLists);
 app.use('/', GetShoppingList);
+app.use('/', DeleteShoppingList);
 
 // Database connection and server has running on PORT
 socketHandler(io);
