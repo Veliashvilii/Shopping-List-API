@@ -1,8 +1,10 @@
 const express = require('express');
-const cors = require('cors');
-
+const http = require('http');
+const socketIo = require('socket.io');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const Database = require('../Config/Database.js');
+const socketHandler = require('../Sockets/Socket.js');
 
 // Authentication Routers
 const Login = require('../Routers/Auth/Login.js');
@@ -13,6 +15,8 @@ dotenv.config();
 
 const app = express();
 app.use(cors());
+const server = http.createServer(app); // HTTP sunucusu oluştur
+const io = socketIo(server); // Socket.io'yu başlat
 
 // How data we accept?
 app.use(express.json({limit: "30mb", extended: true}));
@@ -24,9 +28,9 @@ app.use('/', Register);
 app.use('/', ForgotPassword);
 
 // Database connection and server has running on PORT
+socketHandler(io);
 Database()
-const server = require('./App.js');
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
-})
+});

@@ -7,7 +7,15 @@ const ShoppingListSchema = new mongoose.Schema({
     unique: true
   },
 
-  items: [String]
+  items: [String],
+  
+  message: {
+    type: String,
+    required: false,
+    unique: false
+  },
+
+  participants: [String]
 });
 
 const ShoppingList = mongoose.model('ShoppingList', ShoppingListSchema);
