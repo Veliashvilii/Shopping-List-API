@@ -20,6 +20,7 @@ const DeleteShoppingList = require('../Routers/Shopping List/DeleteShoppingList.
 const GetMyShoppingLists = require('../Routers/User/GetMyShoppingLists.js');
 const GetMe = require('../Routers/User/GetMe.js');
 const UpdateMyPassword = require('../Routers/User/UpdateMyPassword.js');
+const UserUpdateMe = require('../Routers/User/UserUpdateMe.js');
 
 dotenv.config();
 
@@ -42,6 +43,7 @@ app.use('/', GetShoppingList);
 app.use('/', DeleteShoppingList);
 app.use('/', GetMe);
 app.use('/', UpdateMyPassword);
+app.use('/', UserUpdateMe);
 
 // Database connection and server has running on PORT
 socketHandler(io);
