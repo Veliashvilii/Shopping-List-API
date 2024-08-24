@@ -14,6 +14,9 @@ const ForgotPassword = require('../Routers/Auth/ForgotPassword.js');
 // Shopping List Routers
 const CreateShoppingList = require('../Routers/Shopping List/CreateShoppingList.js');
 
+// Users Routers
+const GetMyShoppingLists = require('../Routers/User/GetMyShoppingLists.js');
+
 dotenv.config();
 
 const app = express();
@@ -30,6 +33,7 @@ app.use('/', Login);
 app.use('/', Register);
 app.use('/', ForgotPassword);
 app.use('/', CreateShoppingList);
+app.use('/', GetMyShoppingLists);
 
 // Database connection and server has running on PORT
 socketHandler(io);
