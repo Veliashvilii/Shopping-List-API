@@ -12,10 +12,8 @@ const DeleteShoppingList = async(req, res) => {
       });
     }
 
-    // Alışveriş listesini sil
     await ShoppingList.findByIdAndDelete(shoppingList._id);
 
-    // Alışveriş listesinin hala olup olmadığını kontrol et
     const isShoppingList = await ShoppingList.findOne({ roomId: roomId });
     
     if (!isShoppingList) {
