@@ -1,7 +1,3 @@
-Sure! Here's your README with the "Testing with Postman" section integrated:
-
----
-
 # Shopping-List-API
 
 The **Shopping-List-API** is a Node.js application designed to manage shopping lists collaboratively. The API supports user authentication, real-time updates via WebSockets, and CRUD operations on shopping lists. The backend is built with Express.js, MongoDB, and Socket.io, ensuring a scalable and responsive experience.
@@ -182,8 +178,12 @@ To test the API using Postman, follow these steps:
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the ISC License. See the [ISC License](https://opensource.org/licenses/ISC) for more details.
 
----
+The ISC License is a permissive open-source license that is functionally similar to the MIT License. It allows for software to be freely used, modified, and distributed, provided that the license and copyright notice are included in all copies or substantial portions of the software.
 
-Feel free to adjust any details to better fit your project or personal preferences!
+### Key Points of ISC License
+
+- **Permissions:** Allows for copying, modifying, merging, publishing, distributing, sublicensing, and selling the software.
+- **Conditions:** Must include the original copyright notice and license text in all copies or substantial portions of the software.
+- **Limitation:** The software is provided "as is," without warranty of any kind.
