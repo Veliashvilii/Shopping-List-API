@@ -92,7 +92,7 @@ Shopping-List-API/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/shopping-list-api.git
+   git clone https://github.com/Veliashvilii/Shopping-List-API.git
    ```
 2. **Navigate to the project directory:**
    ```bash
