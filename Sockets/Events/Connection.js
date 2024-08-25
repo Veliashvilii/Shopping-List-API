@@ -1,7 +1,7 @@
 module.exports = (socket, io) => {
-  console.log('Yeni bir kullanıcı bağlandı:', socket.id);
+  console.log('A new user connected:', socket.id);
 
   socket.on('disconnect', () => {
-    console.log('Kullanıcı bağlantısı koptu:', socket.id);
+    console.log('A user disconnected:', socket.id);
   });
 };
