@@ -6,12 +6,12 @@ const updateListHandler = require('./Events/UpdateList.js');
 
 const socketHandler = (io) => {
   io.on('connection', (socket) => {
-    //console.log('Yeni bir kullanıcı bağlandı:', socket.id);
+    console.log('A new user connected:', socket.id);
 
-    // Bağlantı olaylarını yönet
+    // Handle connection events
     connectionHandler(socket, io);
     
-    // Diğer olayları yönet
+    // Handle other events
     socket.on('joinRoom', joinRoomHandler(socket, io));
     socket.on('addItem', addItemHandler(socket, io));
     socket.on('removeItem', removeItemHandler(socket, io));
